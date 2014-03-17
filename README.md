@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/cloudfoundry/gofileutils.png)](https://travis-ci.org/cloudfoundry/gofileutils)
+
 Go File Utils
 =============
 
