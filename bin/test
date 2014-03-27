@@ -5,4 +5,5 @@ set -e -x
 go get github.com/onsi/ginkgo/ginkgo
 go get github.com/onsi/gomega
 
-ginkgo -r
+FIRST_GOPATH_DIR=$(echo $GOPATH | cut -d: -f1)
+$FIRST_GOPATH_DIR/bin/ginkgo -r
