@@ -162,26 +162,4 @@ var _ = Describe("Fileutils File", func() {
 			})
 		})
 	})
-
-	Describe("CopyPathToWriter", func() {
-		var destPath string
-
-		BeforeEach(func() {
-			destFile, err := ioutil.TempFile("", "copy_test")
-			Expect(err).NotTo(HaveOccurred())
-			defer destFile.Close()
-
-			destPath = destFile.Name()
-
-			err = fileutils.CopyPathToWriter(fixturePath, destFile)
-			Expect(err).NotTo(HaveOccurred())
-		})
-
-		It("copies the file contents", func() {
-			fileBytes, err := ioutil.ReadFile(destPath)
-			Expect(err).NotTo(HaveOccurred())
-
-			Expect(fileBytes).To(Equal(fixtureBytes))
-		})
-	})
 })
