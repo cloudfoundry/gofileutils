@@ -170,24 +170,4 @@ var _ = Describe("Fileutils File", func() {
 			Expect(fileBytes).To(Equal(fixtureBytes))
 		})
 	})
-
-	Describe("CopyReaderToPath", func() {
-		var destPath = fileutils.TempPath("copy_test")
-
-		BeforeEach(func() {
-			fixtureReader, err := os.Open(fixturePath)
-			Expect(err).NotTo(HaveOccurred())
-			defer fixtureReader.Close()
-
-			err = fileutils.CopyReaderToPath(fixtureReader, destPath)
-			Expect(err).NotTo(HaveOccurred())
-		})
-
-		It("copies the file contents", func() {
-			fileBytes, err := ioutil.ReadFile(destPath)
-			Expect(err).NotTo(HaveOccurred())
-
-			Expect(fileBytes).To(Equal(fixtureBytes))
-		})
-	})
 })

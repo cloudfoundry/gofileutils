@@ -78,14 +78,3 @@ func CopyPathToWriter(originalFilePath string, targetWriter io.Writer) (err erro
 
 	return
 }
-
-func CopyReaderToPath(src io.Reader, targetPath string) (err error) {
-	destFile, err := Create(targetPath)
-	if err != nil {
-		return
-	}
-	defer destFile.Close()
-
-	_, err = io.Copy(destFile, src)
-	return
-}
