@@ -6,7 +6,7 @@ import (
 	"path"
 	"path/filepath"
 
-	"github.com/cloudfoundry/gofileutils/fileutils"
+	"code.cloudfoundry.org/gofileutils/fileutils"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )
